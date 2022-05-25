@@ -3,33 +3,33 @@
 // Preguntarle estos datos al usuario y guardarlos en 2 variables
 // Ejecutar la función con estos datos
 // Impriman el resultado en la consola
-function edadUsuario(anioActual,anioNacimiento){
+function calcularEdadUsuario(anioActual,anioNacimiento){
     return anioActual - anioNacimiento
 }
 
 const anioActual = parseInt(prompt("En qué año estamos?"))
 const anioNacimiento = parseInt(prompt("En qué año naciste?"))
 
-console.log(edadUsuario(anioActual,anioNacimiento))
+console.log(calcularEdadUsuario(anioActual,anioNacimiento))
 
 // Preguntar el salario anual y calcular el salario mensual
 // Preguntar el salario mensual y calcular el anual
 // diario... semanal, por hora. etc.
 
-const salarioAnual = parseInt(prompt("Cual es tu salario anual?"))
+const salarioAnual = Number(prompt("Cual es tu salario anual?"))
 
-function calcularSalarioAnual(salarioAnual){
+function calcularSalarioMensual(salarioAnual){
     return salarioAnual / 12
 }
-alert(`Tu salario mensual es de: $${parseInt(calcularSalarioAnual(salarioAnual))}`)
+alert(`Tu salario mensual es de: $${Number(calcularSalarioMensual(salarioAnual)).toFixed(2)}`)
 
-const salarioMensual = parseInt(prompt("Cual es tu salario mensual?"))
+const salarioMensual = Number(prompt("Cual es tu salario mensual?"))
 calcularSalario(salarioMensual)
 
 function calcularSalario(salarioMensual){
-    const $salarioAnual = salarioMensual*12
-    const salarioSemanal = $salarioAnual / 52
+    const salarioAnual = salarioMensual*12
+    const salarioSemanal = salarioAnual / 52
     const salarioDiario = salarioSemanal / 5
     const salarioHora = salarioDiario / 8
-    return alert(`Tu salario anual es de $${parseInt($salarioAnual)}, el semanal de $${parseInt(salarioSemanal)}, el diario de $${parseInt(salarioDiario)} y por hora de $${parseInt(salarioHora)}:`);
+    return alert(`Tu salario anual es de $${Number(salarioAnual).toFixed(2)}, el semanal de $${Number(salarioSemanal).toFixed(2)}, el diario de $${Number(salarioDiario).toFixed(2)} y por hora de $${Number(salarioHora).toFixed(2)}:`);
 }
