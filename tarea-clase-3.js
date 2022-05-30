@@ -7,15 +7,15 @@
 // Imprimir "Hola " y el nombre, " te llamás igual que mi ..."
 // Si no, simplemente imprimir "Hola " + nombre!
 
-const nombreUsuario = prompt("Cual es su nombre?")
-const nombreAmigo = "Benjamin"
-const nombreAdmin = "Santiago"
+const nombreUsuario = prompt("Cual es su nombre?").toLowerCase()
+const nombreAmigo = "benjamin"
+const nombreAdmin = "santiago"
 if (nombreUsuario === nombreAdmin){
-    console.log("Hola, Tocayo! Yo también me llamo " + nombreUsuario)
+    console.log(`Hola, Tocayo! Yo también me llamo ${nombreUsuario}`)
 }else if (nombreUsuario === nombreAmigo){
-    console.log("Hola " + nombreUsuario + " te llamás igual que mi amigo")
+    console.log(`Hola ${nombreUsuario} te llamás igual que mi amigo`)
 }else {
-    console.log("Hola "+ nombreUsuario + "!")
+    console.log(`Hola ${nombreUsuario}!`)
 }
 
 //Tarea 2:
@@ -44,17 +44,20 @@ if (edadUsuario === edadAdmin){
 // Punto bonus: SI, NO, Si, No, si, no.
 
 const tieneDocumento = prompt("Tienes documento? (Si/No)")
+const EDAD_MINIMA_INGRESO = 18
+const TIENE_DOCUMENTO = "si"
+const NO_TIENE_DOCUMENTO = "no"
 
-if (tieneDocumento.toLowerCase() === 'si'){
+if (tieneDocumento.toLowerCase() === TIENE_DOCUMENTO){
     let edadUsuario = Number(prompt("Cuantos años tienes?"))
-    if (edadUsuario >= 18){
+    if (edadUsuario >= EDAD_MINIMA_INGRESO){
         console.log("Puedes entrar al bar")
-    }else if (edadUsuario <= 18){
+    }else if (edadUsuario < EDAD_MINIMA_INGRESO){
         console.log("No puedes entrar al bar")
     }else {
         console.log("No he entendido lo que me dices")
     }
-}else if (tieneDocumento.toLowerCase() === 'no'){
+}else if (tieneDocumento.toLowerCase() === NO_TIENE_DOCUMENTO){
     console.log("No puedes entrar al bar")
 }else {
     console.log("No he entendido lo que me dices")
