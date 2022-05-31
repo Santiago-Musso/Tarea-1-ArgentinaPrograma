@@ -45,18 +45,14 @@ function parte3(){
     const FINAL_FIZZBUZZ = 50
 
     for (let i = INICIO_FIZZBUZZ; i <= FINAL_FIZZBUZZ; i++){
-        let impresorFizzBuzz = i
+        let impresorFizzBuzz = ""
         if (i%3 == 0){
             impresorFizzBuzz = "Fizz"
         }
         if (i%5 == 0){
-            if (impresorFizzBuzz == i){
-                impresorFizzBuzz = "Buzz"
-            }else {
-                impresorFizzBuzz += "Buzz"
+            impresorFizzBuzz += "Buzz"
             }
-        }
-        console.log(impresorFizzBuzz)
+        console.log(impresorFizzBuzz || i)
     }
 }
 parte3()
@@ -66,7 +62,7 @@ parte3()
 
 console.log("Parte 4:")
 function parte4(){
-    const arregloNumeros = [10,5,4,2,8]
+    const ARREGLO_NUMEROS = [10,5,4,2,8]
 
     function calcularPromedio(arregloNumeros){
         let sumador = 0
@@ -76,6 +72,6 @@ function parte4(){
         return (sumador / arregloNumeros.length)
     }
 
-    console.log(`Tu promedio es: ${calcularPromedio(arregloNumeros)}`)
+    console.log(`Tu promedio es: ${calcularPromedio(ARREGLO_NUMEROS)}`)
 }
 parte4()
