@@ -1,22 +1,23 @@
-const formulario = document.querySelector('form')
 const CANTIDAD_VIDEOS = 5
+const formulario = document.querySelector('form')
+const calcular = document.querySelector('#calcular-total')
 
-function crearInputs(){
+function crear$s(){
     for (let i = 0; i < CANTIDAD_VIDEOS; i++){
-        inputHoras = document.createElement('input')
-        inputMinutos = document.createElement('input')
-        inputSegundos = document.createElement('input')
-        divVideos = document.createElement('div')
-        inputHoras.className = `input-horas`
-        inputHoras.setAttribute("placeholder",`Horas clase#${i+1}`)
-        inputMinutos.className = `input-minutos`
-        inputMinutos.setAttribute("placeholder",`Minutos clase#${i+1}`)
-        inputSegundos.className = `input-segundos`
-        inputSegundos.setAttribute("placeholder",`Segundos clase#${i+1}`)
-        divVideos.setAttribute("id",`div-video-${i}`)
-        divVideos.innerText = `Clase #${i+1}`
-        divVideos.append(inputHoras,inputMinutos,inputSegundos)
-        formulario.appendChild(divVideos)
+        $horas = document.createElement('input')
+        $minutos = document.createElement('input')
+        $segundos = document.createElement('input')
+        $video = document.createElement('div')
+        $horas.className = `input-horas`
+        $horas.setAttribute("placeholder",`Horas clase#${i+1}`)
+        $minutos.className = `input-minutos`
+        $minutos.setAttribute("placeholder",`Minutos clase#${i+1}`)
+        $segundos.className = `input-segundos`
+        $segundos.setAttribute("placeholder",`Segundos clase#${i+1}`)
+        $video.setAttribute("id",`div-video-${i}`)
+        $video.innerText = `Clase #${i+1}`
+        $video.append($horas,$minutos,$segundos)
+        formulario.appendChild($video)
     }
     inputCalcular = document.createElement('input')
     inputCalcular.setAttribute("type",'button')
@@ -24,10 +25,6 @@ function crearInputs(){
     inputCalcular.value = 'Calcular'
     formulario.appendChild(inputCalcular)
 }
-
-crearInputs()
-
-const calcular = document.querySelector('#calcular-total')
 
 calcular.onclick = function(){
     const listaHoras = document.querySelectorAll('.input-horas')
@@ -53,3 +50,4 @@ calcular.onclick = function(){
 
 }
 
+crear$s()
