@@ -2,7 +2,7 @@ const CANTIDAD_VIDEOS = 5
 const formulario = document.querySelector('form')
 const calcular = document.querySelector('#calcular-total')
 
-function crear$s(){
+function crearInputs(){
     for (let i = 0; i < CANTIDAD_VIDEOS; i++){
         $horas = document.createElement('input')
         $minutos = document.createElement('input')
@@ -50,4 +50,4 @@ calcular.onclick = function(){
 
 }
 
-crear$s()
+crearInputs()
