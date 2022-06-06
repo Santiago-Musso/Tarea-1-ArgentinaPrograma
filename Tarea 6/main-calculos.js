@@ -29,14 +29,14 @@ function crearInputs(familiares){
 }
 
 function consultarFamiliares(){
-    let flag = true
+    let validadorNumeroFamiliares = true
 
-    while(flag){
+    while(validadorNumeroFamiliares){
         const familiares = Number(prompt("Cuanta gente hay en tu grupo familiar?"))
 
         if (!isNaN(familiares)){
             crearInputs(familiares)
-            flag = false
+            validadorNumeroFamiliares = false
         }else {
             alert("No ha introducido un valor correcto")
         }
