@@ -1,14 +1,14 @@
 const $formulario = document.querySelector('form')
-const $mostrarResultados = document.getElementById('mostrar-resultado')
+const $textoMostrarResultados = document.getElementById('mostrar-resultado')
 const $textoResultados = document.getElementById('texto-resultado')
-const $agregarFamiliar = document.getElementById('agregar-familiar')
-const $borrarFamiliar = document.getElementById('borrar-familiar')
-const $calcularSalario = document.getElementById('calcular')
+const $botonAgregarFamiliar = document.getElementById('agregar-familiar')
+const $botonBorrarFamiliar = document.getElementById('borrar-familiar')
+const $botonCalcularSalario = document.getElementById('calcular')
 let contadorFamiliares = 1
 
-$agregarFamiliar.onclick = agregarFamiliar
-$borrarFamiliar.onclick = borrarFamiliar
-$calcularSalario.onclick = calcularSalario
+$botonAgregarFamiliar.onclick = agregarFamiliar
+$botonBorrarFamiliar.onclick = borrarFamiliar
+$botonCalcularSalario.onclick = calcularSalario
 
 function agregarFamiliar(){
     const $agregarLabel = document.createElement('label') 
@@ -24,13 +24,13 @@ function agregarFamiliar(){
 }
 
 function borrarFamiliar(){
-    const $borrarFamiliar = document.querySelectorAll('.familiar')
-    const $ultimoFamiliar = $borrarFamiliar[contadorFamiliares - 2]
+    const $listaFamiliar = document.querySelectorAll('.familiar')
+    const $cantidadFamiliares = $listaFamiliar.length
 
-    $mostrarResultados.className = 'ocultar'
+    $textoMostrarResultados.className = 'ocultar'
     
-    if ($ultimoFamiliar != ''){
-        $formulario.removeChild($ultimoFamiliar)
+    if ($cantidadFamiliares > 0){
+        $listaFamiliar[$cantidadFamiliares - 1].remove()
         contadorFamiliares--
     }
 }
@@ -103,6 +103,6 @@ function calcularSalario(){
         $textoResultados.innerHTML += (`El menor salario anual es: ${calcularMenorSalario()} \n`)
         $textoResultados.innerHTML += (`El salario promedio anual es: ${calcularSalarioAnualPromedio()} \n`)
         $textoResultados.innerHTML += (`El salario promedio mensual es: ${calcularSalarioMensualPromedio()}`)
-        $mostrarResultados.className = ''
+        $textoMostrarResultados.className = ''
     }
 }
